@@ -109,7 +109,10 @@ tags:
 - assertVisible: COPY
 - tapOn: COPY
 - assertVisible: "* Click on the copy button if you unable to scan QR code"
-- assertVisible: Address is valid for 120 minutes
+- assertVisible:
+    id: addressValidTimeText
+
+
 
 
 - assertVisible:

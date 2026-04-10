@@ -21,3 +21,5 @@ appId: com.newroztech.gamewallet
 # step 8:Send 
  
 - runFlow: ../sendcryptocashout/cryptocashout.yaml
+# step 8:Sendmoney
+- runFlow: ../sendcryptocashout/wallets_sendmoney.yaml

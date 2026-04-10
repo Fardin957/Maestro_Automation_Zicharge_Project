@@ -1,0 +1,90 @@
+appId: com.newroztech.gamewallet
+tags:
+  - smoke
+  - regression
+  - P0
+  - Functional
+---
+#Runflow use for the first login file the this file is exceuted
+- launchApp
+
+#Using ENV LOgin the app
+- runFlow:
+    file: ../../flows/login_helper.yaml
+    env:
+      MOBILE_NUMBER: "${Mobile_Number}"
+      PASSWORD: "${Password}"
+- assertVisible:
+    id: bannerImage
+- tapOn:
+    id: closeBtn
+- tapOn:
+    id: withdrawLayout
+- tapOn:
+    id: adapterLayout
+    index: 1
+- assertVisible:
+    id: getwayIconImageView
+    index: 1
+- assertVisible: Wallets
+- assertVisible:
+    id: adapterLayout
+    index: 3
+- assertVisible: 🇮🇶  +964
+- assertVisible:
+    id: downArrow
+- assertVisible: Receiver Zicharge account number
+- tapOn: Receiver Zicharge account number
+- inputText: "1616161616"
+- hideKeyboard
+
+
+- assertVisible:
+    id: customEditTextEndImageView
+- assertVisible: Please enter zicharge account number to transfer money
+- assertVisible: IQD
+- assertVisible: Amount
+- tapOn: Amount
+- inputText: "500"
+
+- hideKeyboard
+- assertVisible: Please enter the amount you want to withdraw
+- runFlow:
+    when:
+      visible: SEND
+    commands:
+      - assertVisible: SEND
+      - tapOn: SEND
+- assertVisible:
+    id: content
+- assertVisible: Send Confirmation
+- assertVisible: IQD 505.00 will be deducted from your account. Tap YES to confirm.
+- assertVisible: CANCEL
+- runFlow:
+    when:
+      visible: YES, CONFIRM
+    commands:
+      - assertVisible: YES, CONFIRM
+      - tapOn: YES, CONFIRM
+
+- runFlow:
+    file: ../../flows/enter_your_pin.yaml
+- assertVisible:
+    id: appLogo
+- assertVisible:
+    id: statusIcon
+- assertVisible: Congratulations!
+- assertVisible: The money has been sent.
+- runFlow:
+    when:
+      visible: DONE
+    commands:
+      - assertVisible: DONE
+      - tapOn: DONE
+- waitForAnimationToEnd
+
+#Kill the app
+- runFlow:
+    file: ../../flows/teardown.yaml
+
+

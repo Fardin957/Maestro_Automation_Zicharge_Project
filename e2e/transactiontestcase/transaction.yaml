@@ -49,5 +49,8 @@ tags:
 - tapOn: BACK
 - waitForAnimationToEnd
 
+
+#- takeScreenshot: "../../screenshots/Homescreen"
+
 - runFlow:
     file: ../../flows/teardown.yaml

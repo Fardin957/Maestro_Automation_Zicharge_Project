@@ -47,7 +47,8 @@ tags:
 - tapOn: Search
 - inputText: USDT
 - tapOn:
-    id: currencyCardView
+    id: adapterLayout
+
 - assertVisible:
     id: customEditTextStartImageView
     index: 1
@@ -58,9 +59,11 @@ tags:
 - assertVisible: Please select Network
 
 - tapOn: Network
-- assertVisible:
+- tapOn:
     id: content
     index: 1
+
+
 - assertVisible:
     id: customEditTextStartImageView
     index: 2
@@ -77,6 +80,7 @@ tags:
 - hideKeyboard
 - assertVisible:
     id: withdrawBalance
+- scroll
 
 - runFlow:
     when:
@@ -103,19 +107,9 @@ tags:
     commands:
       - assertVisible: CONTINUE
       - tapOn: CONTINUE
-- assertVisible:
-    id: appLogo
-- assertVisible: ENTER YOUR ACCOUNT PIN
-- assertVisible: You need to enter your account PIN number here to confirm the transaction process.
-- assertVisible: Enter PIN
-- tapOn: Enter PIN
-- inputText: "1245"
 - runFlow:
-    when:
-      visible: CONFIRM
-    commands:
-      - assertVisible: CONFIRM
-      - tapOn: CONFIRM
+    file: ../../flows/enter_your_pin.yaml
+
 - assertVisible:
     id: appLogo
 - assertVisible:

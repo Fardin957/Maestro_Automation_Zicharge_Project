@@ -1,0 +1,154 @@
+appId: com.newroztech.gamewallet
+tags:
+  - smoke
+  - regression
+  - P0
+  - Functional
+---
+#Runflow use for the first login file the this file is exceuted
+- launchApp
+
+#Using ENV LOgin the app
+- runFlow:
+    file: ../../flows/login_helper.yaml
+    env:
+      MOBILE_NUMBER: "${Mobile_Number}"
+      PASSWORD: "${Password}"
+- assertVisible:
+    id: bannerImage
+- tapOn:
+    id: closeBtn
+
+    
+- tapOn:
+    id: withdrawLayout
+
+- assertVisible: BACK
+- assertVisible:
+    id: appLogo
+- assertVisible:
+    id: notificationIcon
+- assertVisible:
+    id: getwayIconImageView
+- assertVisible: Crypto
+- assertVisible:
+    id: customEditTextStartImageView
+- assertVisible:
+    id: customEditTextEndImageView
+- assertVisible: Currency
+- assertVisible: Please select Currency
+
+- tapOn: Currency
+- assertVisible: CURRENCY LIST
+- assertVisible: Please select cryptocurrencies from below list.
+- assertVisible:
+    id: customEditTextStartImageView
+- assertVisible: Search
+- tapOn: Search
+- inputText: USDT
+- tapOn:
+    id: currencyCardView
+- assertVisible:
+    id: customEditTextStartImageView
+    index: 1
+- assertVisible:
+    id: customEditTextEndImageView
+    index: 1
+- assertVisible: Network
+- assertVisible: Please select Network
+
+- tapOn: Network
+- assertVisible:
+    id: content
+    index: 1
+- assertVisible:
+    id: customEditTextStartImageView
+    index: 2
+- assertVisible: Wallet Address
+- assertVisible: Enter Receiver Crypto Wallet Address
+- tapOn: Wallet Address
+- inputText: fardinfarukbhuiyan
+- hideKeyboard
+- assertVisible: IQD
+- assertVisible: Amount
+- assertVisible: Please enter the amount to withdraw
+- tapOn: Amount
+- inputText: "250"
+- hideKeyboard
+- assertVisible:
+    id: withdrawBalance
+
+- runFlow:
+    when:
+      visible: WITHDRAW
+    commands:
+      - assertVisible: WITHDRAW
+      - tapOn: WITHDRAW
+
+- assertVisible: Confirmation Summary
+- assertVisible: Crypto Wallet Address
+- assertVisible:
+    id: cryptoWalletAddress
+- assertVisible: Withdrawal Balance
+- assertVisible: IQD 250
+- assertVisible: Crypto Balance
+- assertVisible: 0.1612903 USDT_T (TRC-20)
+- assertVisible: Crypto Eligibility
+- assertVisible: 0 USDT_T (IQD 0)
+- assertVisible: Crypto Remaining
+- assertVisible: 0.1612903 USDT_T (IQD 250)
+- runFlow:
+    when:
+      visible: CONTINUE
+    commands:
+      - assertVisible: CONTINUE
+      - tapOn: CONTINUE
+- assertVisible:
+    id: appLogo
+- assertVisible: ENTER YOUR ACCOUNT PIN
+- assertVisible: You need to enter your account PIN number here to confirm the transaction process.
+- assertVisible: Enter PIN
+- tapOn: Enter PIN
+- inputText: "1245"
+- runFlow:
+    when:
+      visible: CONFIRM
+    commands:
+      - assertVisible: CONFIRM
+      - tapOn: CONFIRM
+- assertVisible:
+    id: appLogo
+- assertVisible:
+    id: statusIcon
+- assertVisible: Congratulations!
+- assertVisible: Your request has been successfully sent!
+- assertVisible: Transaction Summary
+- assertVisible: Withdrawal Amount
+- assertVisible: 250.00 IQD
+- assertVisible: Withdrawable Balance
+- assertVisible: 0.16129030 USDT (TRC-20)
+- assertVisible: Withdrawal Fees
+- assertVisible: Status
+- assertVisible: Pending
+- assertVisible: Wallet Address
+- assertVisible:
+    id: withdrawalWalletAddress
+- runFlow:
+    when:
+      visible: DONE
+    commands:
+      - assertVisible: DONE
+      - tapOn: DONE
+- tapOn:
+    id: bottomMenuHome
+- waitForAnimationToEnd
+
+#Kill the app
+- runFlow:
+    file: ../../flows/teardown.yaml
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+appId: com.newroztech.gamewallet
+---
+# Step 1: Login
+- runFlow: ../logintestcases/login_with_valid_cred.yaml
+
+
+# Step 2: Homescreen
+- runFlow: ../homescreentestcase/homescreen.yaml
+
+# Step 3: Notification
+- runFlow: ../notificationtestcase/notification.yaml
+
+# step 4:Topup cryptro cash in
+- runFlow: ../topuptestcase/cryptotestcase.yaml
+# step 5:Topup cryptro request page
+- runFlow: ../topuptestcase/cryptorequest.yaml
+# step 6:Topup Zigift Card
+- runFlow: ../topuptestcase/zigiftcard.yaml
+# step 7:Transaction 
+- runFlow: ../transactiontestcase/transaction.yaml
+# step 8:Send 
+ 
+- runFlow: ../sendcryptocashout/cryptocashout.yaml

@@ -1,0 +1,53 @@
+appId: com.newroztech.gamewallet
+tags:
+  - smoke
+  - regression
+  - P0
+  - Functional
+---
+#Runflow use for the first login file the this file is exceuted
+- launchApp
+
+#Using ENV LOgin the app
+- runFlow:
+    file: ../../flows/login_helper.yaml
+    env:
+      MOBILE_NUMBER: "${Mobile_Number}"
+      PASSWORD: "${Password}"
+- assertVisible:
+    id: bannerImage
+- tapOn:
+    id: closeBtn
+
+- runFlow:
+    when:
+      visible: Home
+    commands:
+      - assertVisible: Transaction
+      - tapOn:
+           id: transactionLayout
+
+- assertVisible:
+    id: appLogo
+
+- assertVisible:
+    id: notificationIcon
+- assertVisible: |-
+    TRANSACTIONS
+    HISTORY
+- assertVisible:
+    id: transactionImageView
+
+# Scroll down twice
+- scroll
+- scroll
+- scroll
+# Scroll up once (fixed)
+- swipe:
+    start: 50%,30%
+    end: 50%,80%
+- tapOn: BACK
+- waitForAnimationToEnd
+
+- runFlow:
+    file: ../../flows/teardown.yaml

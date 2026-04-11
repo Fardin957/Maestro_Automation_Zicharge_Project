@@ -16,3 +16,5 @@ appId: com.newroztech.gamewallet
 - assertVisible: You don't have account yet?
 - assertVisible: CREATE NEW ACCOUNT
 - tapOn: LOGIN
+- waitForAnimationToEnd
+

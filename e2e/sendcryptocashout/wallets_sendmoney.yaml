@@ -42,6 +42,8 @@ tags:
 - assertVisible:
     id: customEditTextEndImageView
 - assertVisible: Please enter zicharge account number to transfer money
+
+
 - assertVisible: IQD
 - assertVisible: Amount
 - tapOn: Amount
@@ -49,12 +51,15 @@ tags:
 
 - hideKeyboard
 - assertVisible: Please enter the amount you want to withdraw
+
+
 - runFlow:
     when:
       visible: SEND
     commands:
       - assertVisible: SEND
       - tapOn: SEND
+- takeScreenshot: "../../screenshots/send_money_ammout_with_commission"
 - assertVisible:
     id: content
 - assertVisible: Send Confirmation

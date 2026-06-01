@@ -1,0 +1,11 @@
+appId: com.newroztech.gamewallet
+---
+- runFlow: ../e2e/logintestcases/login_with_valid_cred.yaml
+- runFlow: ../e2e/homescreentestcase/homescreen.yaml
+- runFlow: ../e2e/notificationtestcase/notification.yaml
+- runFlow: ../e2e/topuptestcase/cryptotestcase.yaml
+- runFlow: ../e2e/topuptestcase/cryptorequest.yaml
+- runFlow: ../e2e/topuptestcase/zigiftcard.yaml
+- runFlow: ../e2e/transactiontestcase/transaction.yaml
+- runFlow: ../e2e/sendcryptocashout/cryptocashout.yaml
+- runFlow: ../e2e/sendcryptocashout/wallets_sendmoney.yaml

@@ -1,0 +1,13 @@
+11:00:05.896 [ INFO] maestro.cli.report.TestDebugReporter.logSystemInfo: Debug output path: C:\Users\Fardin Faruk\Documents\Maestro\ZiCharge\.\debug-logs\.maestro\tests\2026-04-06_110005
+11:00:05.901 [ INFO] MAESTRO.logSystemInfo: ---- System Info ----
+11:00:05.902 [ INFO] MAESTRO.logSystemInfo: Maestro Version: 2.4.0
+11:00:05.905 [ INFO] MAESTRO.logSystemInfo: CI: Undefined
+11:00:05.905 [ INFO] MAESTRO.logSystemInfo: OS Name: Windows 10
+11:00:05.906 [ INFO] MAESTRO.logSystemInfo: OS Version: 10.0
+11:00:05.906 [ INFO] MAESTRO.logSystemInfo: Architecture: amd64
+11:00:05.909 [ INFO] MAESTRO.logSystemInfo: Java Version: 21
+11:00:05.913 [ INFO] MAESTRO.logSystemInfo: Xcode Version: null
+11:00:05.919 [ INFO] MAESTRO.logSystemInfo: Flutter Version: Undefined
+11:00:05.927 [ INFO] MAESTRO.logSystemInfo: Flutter Channel: Undefined
+11:00:05.927 [ INFO] MAESTRO.logSystemInfo: ---------------------
+11:00:07.101 [DEBUG] io.micrometer.common.util.internal.logging.InternalLoggerFactory.newDefaultFactory: Using SLF4J as the default logging framework

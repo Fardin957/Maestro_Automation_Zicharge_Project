@@ -1,0 +1,65 @@
+appId: com.newroztech.gamewallet
+tags:
+  - smoke
+  - regression
+  - P0
+  - Functional
+---
+#Runflow use for the first login file the this file is exceuted
+- launchApp
+
+#Using ENV LOgin the app
+- runFlow:
+    file: ../../flows/login_helper.yaml
+    env:
+      MOBILE_NUMBER: "${Mobile_Number}"
+      PASSWORD: "${Password}"
+- assertVisible:
+    id: bannerImage
+- tapOn:
+    id: closeBtn
+
+- runFlow:
+    when:
+      visible: TopUp
+    commands:
+      - tapOn: TopUp
+- runFlow:
+    when:
+      visible: ZiGift Card
+    commands:
+      - tapOn: ZiGift Card
+- assertVisible:
+    id: ziGiftCardImageView
+
+- assertVisible: Use the ZiGift cards to recharge your ZiWallet balance
+- assertVisible: |-
+    ZiGift Cards are available at POS and 
+    Online across MENA. 
+    Top up your ZiCharge balance instantly.
+- assertVisible:
+    id: posImageView
+
+- assertVisible: Zi Gift Card PIN Number
+- assertVisible: Please enter Zi gift voucher number
+#- tapOn:
+#  id: cardNumberLayout
+#- inputText: "898538143825816"
+#- hideKeyboard
+
+- runFlow:
+    when:
+      visible: REDEEM
+    commands:
+      - assertVisible: REDEEM
+      - tapOn: REDEEM
+
+- assertVisible: Deposit Trade
+- tapOn:
+    id: adapterLayout
+    index: 2
+- tapOn: BACK
+- waitForAnimationToEnd
+
+- runFlow:
+    file: ../../flows/teardown.yaml

@@ -12,8 +12,8 @@ tags:
 - runFlow:
     file: ../../flows/login_helper.yaml
     env:
-      Mobile_Number: "${Mobile_Number}"
-      Password: "${Password}"
+      MOBILE_NUMBER: "${Mobile_Number}"
+      PASSWORD: "${Password}"
 - assertVisible:
     id: bannerImage
 - tapOn:
@@ -57,6 +57,7 @@ tags:
 - assertVisible:
     id: supportIcon
 - assertVisible: Support
+
 
 #Kill the app
 - runFlow:

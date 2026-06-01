@@ -1,15 +1,12 @@
 appId: com.newroztech.gamewallet
-env:
-  Mobile_Number: "1617539764"
-  Password: "Password100@"
 ---
+
 - tapOn:
     text: "Your Phone number here"
-- eraseText: 10
+- eraseText: 10 
 - inputText: "${Mobile_Number}"
 - tapOn:
     text: "Password"
-- eraseText: 20
 - inputText: "${Password}"
 - tapOn:
     id: customEditTextEndImageView
@@ -20,3 +17,4 @@ env:
 - assertVisible: CREATE NEW ACCOUNT
 - tapOn: LOGIN
 - waitForAnimationToEnd
+

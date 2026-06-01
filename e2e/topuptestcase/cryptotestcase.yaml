@@ -62,10 +62,11 @@ tags:
     id: customEditTextStartImageView
 - assertVisible: Search
 
+
 - runScript:
     file: randomcurrency.js
     env:
-      currencies: "BTC,ETH,USDT,TRX,BNB,BUSD,USDB,DAI,SHIB"
+      currencies: "BTC,ETH,USDT,TRX,BNB,BUSD,BNBB,USDB,DAI"
 
 - scrollUntilVisible:
     element:
@@ -111,6 +112,9 @@ tags:
 - assertVisible:
     id: addressValidTimeText
 
+
+
+
 - assertVisible:
     id: qrCodeImage
 - assertVisible: QR Code
@@ -126,3 +130,8 @@ tags:
 - waitForAnimationToEnd
 - runFlow:
     file: ../../flows/teardown.yaml
+
+
+     
+
+ 

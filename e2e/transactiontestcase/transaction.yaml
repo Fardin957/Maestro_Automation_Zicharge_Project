@@ -25,7 +25,7 @@ tags:
     commands:
       - assertVisible: Transaction
       - tapOn:
-          id: transactionLayout
+           id: transactionLayout
 
 - assertVisible:
     id: appLogo
@@ -48,6 +48,7 @@ tags:
     end: 50%,80%
 - tapOn: BACK
 - waitForAnimationToEnd
+
 
 #- takeScreenshot: "../../screenshots/Homescreen"
 

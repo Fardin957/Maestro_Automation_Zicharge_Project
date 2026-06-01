@@ -23,11 +23,12 @@ tags:
       visible: Home
     commands:
       - tapOn:
-          id: notificationIcon
+            id: notificationIcon
+
 
 - assertVisible:
     id: appLogo
-
+    
 - assertVisible: NOTIFICATIONS
 
 # Scroll down 3 times to cover all notifications

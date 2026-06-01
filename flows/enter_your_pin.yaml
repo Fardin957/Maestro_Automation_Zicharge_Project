@@ -13,3 +13,5 @@ appId: com.newroztech.gamewallet
     commands:
       - assertVisible: CONFIRM
       - tapOn: CONFIRM
+
+

@@ -38,9 +38,11 @@ tags:
 - inputText: "1616161616"
 - hideKeyboard
 
+
 - assertVisible:
     id: customEditTextEndImageView
 - assertVisible: Please enter zicharge account number to transfer money
+
 
 - assertVisible: IQD
 - assertVisible: Amount
@@ -49,6 +51,7 @@ tags:
 
 - hideKeyboard
 - assertVisible: Please enter the amount you want to withdraw
+
 
 - runFlow:
     when:
@@ -88,3 +91,5 @@ tags:
 #Kill the app
 - runFlow:
     file: ../../flows/teardown.yaml
+
+

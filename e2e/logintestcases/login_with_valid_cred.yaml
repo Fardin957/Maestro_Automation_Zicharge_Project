@@ -4,7 +4,7 @@ tags:
   - regression
 ---
 - launchApp
-
+    
 - assertVisible:
     id: languageIcon
 - assertVisible: EN
@@ -55,7 +55,7 @@ tags:
 
 #- assertVisible: Your phone number here
 #- tapOn:
-#  id: customEditText
+  #  id: customEditText
 
 #- eraseText: 10
 
@@ -63,12 +63,12 @@ tags:
 
 #- assertVisible: Password
 #- tapOn:
-#   id: customEditTextView
+ #   id: customEditTextView
 
 #- inputText: "${Password}"
 #- tapOn:
-#   id: customEditTextEndImageView
-#  index: 1
+ #   id: customEditTextEndImageView
+  #  index: 1
 - runFlow:
     file: ../../flows/login_helper.yaml
     env:

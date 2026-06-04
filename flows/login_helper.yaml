@@ -1,4 +1,7 @@
 appId: com.newroztech.gamewallet
+env:
+  Mobile_Number: "1617539764"
+  Password: "Password100@"
 ---
 
 - tapOn:
@@ -7,6 +10,7 @@ appId: com.newroztech.gamewallet
 - inputText: "${Mobile_Number}"
 - tapOn:
     text: "Password"
+- eraseText: 20
 - inputText: "${Password}"
 - tapOn:
     id: customEditTextEndImageView

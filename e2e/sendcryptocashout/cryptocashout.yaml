@@ -118,7 +118,7 @@ tags:
 - assertVisible: Your request has been successfully sent!
 - assertVisible: Transaction Summary
 - assertVisible: Withdrawal Amount
-- assertVisible: 250.00 IQD
+- assertVisible: 250 IQD
 - assertVisible: Withdrawable Balance
 - assertVisible: 0.16129030 USDT (TRC-20)
 - assertVisible: Withdrawal Fees

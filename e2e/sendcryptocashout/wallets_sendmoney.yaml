@@ -63,7 +63,7 @@ tags:
 - assertVisible:
     id: content
 - assertVisible: Send Confirmation
-- assertVisible: IQD 505.00 will be deducted from your account. Tap YES to confirm.
+- assertVisible: IQD 505 will be deducted from your account. Tap YES to confirm.
 - assertVisible: CANCEL
 - runFlow:
     when:

@@ -42,6 +42,11 @@ tags:
 
 - assertVisible: Zi Gift Card PIN Number
 - assertVisible: Please enter Zi gift voucher number
+
+- tapOn: "Zi Gift Card PIN Number"
+- inputText: "412680672927920"
+- hideKeyboard
+
 #- tapOn:
 #  id: cardNumberLayout
 #- inputText: "898538143825816"
@@ -54,12 +59,27 @@ tags:
       - assertVisible: REDEEM
       - tapOn: REDEEM
 
-- assertVisible: Deposit Trade
-- tapOn:
-    id: adapterLayout
-    index: 2
-- tapOn: BACK
-- waitForAnimationToEnd
+
+- runFlow:
+    when:
+      visible: "Topup Confirmation"
+    commands:
+      - assertVisible: "Topup Confirmation"
+      - assertVisible: "IQD 5000.00 will be deposited to your account. Tap YES to confirm."
+      - assertVisible: "CANCEL"
+      - assertVisible: "YES, CONFIRM"
+      - tapOn: "YES, CONFIRM"
+      - runFlow:
+                file: ../../flows/enter_your_pin.yaml
+
+- runFlow:
+    when:
+      visible: "Whoops! Please find below errors -"
+    commands:
+      - assertVisible: "Whoops! Please find below errors -"
+      - assertVisible: "Sorry! Cash Card is invalid."
+      - assertVisible: "TRY AGAIN"
+      - tapOn: "TRY AGAIN"
 
 - runFlow:
     file: ../../flows/teardown.yaml
